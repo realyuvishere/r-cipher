@@ -5,6 +5,13 @@ s_ = s.replace(' ', '')
 # store key
 key = int(input('Enter split key: '))
 
+# split the string into a list
+_l_ = list(s_)
+
+# reverse the whole word
+_l_.reverse()
+s_ = ''.join(_l_)
+
 # initialize list for splitting into key-length groups
 _l = list()
 
@@ -33,9 +40,6 @@ for _i in _l:
 # join the list containing reversed key-length groups into a single word and split it into a list
 _l_ = list(''.join(l_))
 
-# reverse the whole word containing joined key-length groups
-_l_.reverse()
-
 # initialize list for restoring spaces as per the intial sentence stored in the beginning
 l = list()
 space = 0
@@ -50,3 +54,61 @@ for i_ in range(len(s)):
 
 # print the encrypted sentence by joining the list containing spaces as per the initial sentence
 print(''.join(l))
+
+'''
+(LEVEL 1 REVERSAL ENCRYPTION)
+
+Key = 3
+
+S = HELP ME PLEASE
+
+HELPMEPLEASE
+HEL PME PLE ASE
+LEH EMP ELP ESA
+LEHEMPELPESA
+LEHE MP ELPESA
+'''
+
+'''
+(LEVEL 2 REVERSAL ENCRYPTION)
+
+Key = 3
+
+S = HELP ME PLEASE
+
+HELPMEPLEASE
+HEL PME PLE ASE
+LEH EMP ELP ESA
+LEHEMPELPESA
+ASEPLEPMEHEL
+ASEP LE PMEHEL
+'''
+
+'''
+(LEVEL 1 REVERSAL DECRYPTION)
+
+Key = 3
+
+S = LEHE MP ELPESA
+
+LEHEMPELPESA
+LEH EMP ELP ESA
+HEL PME PLE ASE
+HELPMEPLEASE
+HELP ME PLEASE
+'''
+
+'''
+(LEVEL 2 REVERSAL ENCRYPTION)
+
+Key = 3
+
+S = ASEP LE PMEHEL
+
+ASEPLEPMEHEL
+LEHEMPELPESA
+LEH EMP ELP ESA
+HEL PME PLE ASE
+HELPMEPLEASE
+HELP ME PLEASE
+'''
